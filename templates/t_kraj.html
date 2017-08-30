@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Wybory Prezydenta Rzeczypospolitej Polskiej 2000</title>
+    <link rel="stylesheet" type="text/css" href={% static "css.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "sass.css" %}>
+    <script src={% static "jquery.min.js" %}></script>
+    <script src={% static "init.js" %}></script>
+    <img hidden src={% static "pl-500px.png" %}>
+    <script type="text/javascript" src={% static "pl-mapa.js" %}></script>
+    <link rel="stylesheet" type="text/css" media="screen,projection" href={% static "pl-mapa-500px.css" %}/>
+</head>
+<body>
+<header>
+    <div class="tytul"><h1>Wyniki wyborów 2000</h1></div>
+    <h1 class="podtytuł"></h1>
+</header>
+<main>
+    <div class="mapa">
+        <div id="map-pl">
+            <ul id="polska">
+                <li id="pl1"><a href="#wojewodztwo/2.html">Dolnośląskie</a></li>
+                <li id="pl2"><a href="#wojewodztwo/4.html">Kujawsko-pomorskie</a></li>
+                <li id="pl3"><a href="#wojewodztwo/6.html">Lubelskie</a></li>
+                <li id="pl4"><a href="#wojewodztwo/8.html">Lubuskie</a></li>
+                <li id="pl5"><a href="#wojewodztwo/10.html">Łódzkie</a></li>
+                <li id="pl6"><a href="#wojewodztwo/12.html">Małopolskie</a></li>
+                <li id="pl7"><a href="#wojewodztwo/14.html">Mazowieckie</a></li>
+                <li id="pl8"><a href="#wojewodztwo/16.html">Opolskie</a></li>
+                <li id="pl9"><a href="#wojewodztwo/18.html">Podkarpackie</a></li>
+                <li id="pl10"><a href="#wojewodztwo/20.html">Podlaskie</a></li>
+                <li id="pl11"><a href="#wojewodztwo/22.html">Pomorskie</a></li>
+                <li id="pl12"><a href="#wojewodztwo/24.html">Śląskie</a></li>
+                <li id="pl13"><a href="#wojewodztwo/26.html">Świętokrzyskie</a></li>
+                <li id="pl14"><a href="#wojewodztwo/28.html">Warmińsko-mazurskie</a></li>
+                <li id="pl15"><a href="#wojewodztwo/30

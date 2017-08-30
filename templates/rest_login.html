@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Wybory Prezydenta Rzeczypospolitej Polskiej 2000</title>
+    <link rel="stylesheet" type="text/css" href={% static "css.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "sass.css" %}>
+    <script src={% static "jquery.min.js" %}></script>
+    <script src={% static "csrf.js" %}></script>
+    <script src={% static "login.js" %}></script>
+</head>
+<body>
+<header>
+    <div class="tytul"><h1>Wyniki wyborów 2000</h1></div>
+</header>
+<main>
+    <section id="logowanie" class="wysrodkowane">
+        <h2>Logowanie</h2>
+        <form id="formularzLogowania" method="post">
+            <table>
+                <tbody>
+                    <tr><td><label>Login:</label></td><td><input type="text" id="login" required></td></tr>
+                    <tr><td>Hasło:</td><td><input type="password" id="password" required></td></tr>
+                    <tr><td><input id="zaloguj" type="submit" value="Zaloguj"></td></tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+    <section id="powrotDoHome">
+        <a href="..">Powrót</a> do strony startowej.
+    </section>
+</main>
+</body>
+</html>

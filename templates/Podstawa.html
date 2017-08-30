@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wybory Prezydenta Rzeczypospolitej Polskiej 2000</title>
+    {% load static %}
+    {% load mathfilters %}
+    <link rel="stylesheet" type="text/css" href={% static "css.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "sass.css" %}>
+    {% block add_header %}
+    {% endblock %}
+</head>
+<body>
+<header>
+    <div class="login">
+    {% if user.is_authenticated %}
+        Jesteś zalogowany jako {{ user }}
+    <a href="/logout/">Wyloguj</a><br>
+    {% else %}
+    <a href="/login/">Zaloguj</a><br>
+    {% endif %}
+    </div>
+    <div class="tytul"><h1>Wyniki wyborów 2000</h1></div>
+    <h1>{% block tytul %} Polska {% endblock %}</h1>
+</header>
+<main>
+    {% block mainBegin %}
+    {% endblock %}
+    {% block map %}
+    {% endblock %}
+    <div class="tabelki">
+        <div class="wyniki">
+            {% block content %}
+
+            <h2>Wyniki</h2>
+            <table>
+                <tbody>
+                <tr>
+                    <th>Kandydat</th>
+                    <th>Wynik</th>
+                    <th>%</th>
+                    <th class="pasek"></th>
+                </tr>
+                {% for key, value in wyniki.items %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                    <td>{{ value|mul:10000|intdiv:wazne|div:100 }}</td>
+                    <td class="pasek">
+                        {% if drugi %}
+                        {% if drugi == value %}
+                        <div class="drugi dlugosc_paska-{{ value|mul:100|intdiv:wazne }}"></div>
+                        {% elif drugi <= value %}
+                        <div class="pierwszy dlugosc_paska-{{ value|mul:100|intdiv:wazne }}"></div>
+                        {% else %}
+                        <div class="reszta dlugosc_paska-{{ value|mul:100|intdiv:wazne }}"></div>
+                        {% endif %}
+                        {% else %}
+                        <p>nie mam pasków?</p>
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="statystyki">
+            <h2>Statystyka</h2>
+            <table>
+                <tbody>
+                {% for key, value in staty.items %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% endblock %}
+        </div>
+    </div>
+    {% block links %}
+    {% endblock %}
+    {% block footer %}
+    {% endblock %}
+</main>
+</body>
+</html>

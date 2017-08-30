@@ -1,0 +1,52 @@
+tr:nth-child(odd) { background-color:#EEE; }
+tr:hover {
+    background-color: orange;
+}
+
+.pasek, .pierwszy, .drugi{
+    width: 300px;
+}
+
+.pierwszy {
+    background-color: darkred;
+}
+
+.drugi {
+    background-color: skyblue;
+}
+
+.reszta {
+    background-color: grey;
+}
+
+.pierwszy, .drugi, .reszta {
+   min-height: 10px;
+}
+
+@media only screen and (max-width: 820px) {
+    .pasek {
+        width: 0;
+        visibility: hidden;
+    }
+}
+
+.wysrodkowane {
+   text-align: center;
+}
+
+.wyniki, .statystyki, .linki{
+    float: left;
+    margin-bottom: 20px;
+}
+
+.clear {
+    clear:both;
+}
+
+.tytul{
+    text-align: center;
+}
+
+.form-error {
+    color: darkred;
+}

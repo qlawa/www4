@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../www2/.idea/django_1.iml" filepath="$PROJECT_DIR$/../www2/.idea/django_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/www3.iml" filepath="$PROJECT_DIR$/.idea/www3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../www4/.idea/www4.iml" filepath="$PROJECT_DIR$/../www4/.idea/www4.iml" />
+    </modules>
+  </component>
+</project>

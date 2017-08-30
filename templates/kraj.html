@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Wybory Prezydenta Rzeczypospolitej Polskiej 2000</title>
+    <link rel="stylesheet" type="text/css" href={% static "css.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "sass.css" %}>
+    <script src={% static "jquery.min.js" %}></script>
+    <script src={% static "login.js" %}></script>
+    <script src={% static "csrf.js" %}></script>
+    <script src={% static "init.js" %}></script>
+    <img hidden src={% static "pl-500px.png" %}>
+    <script type="text/javascript" src={% static "pl-mapa.js" %}></script>
+    <link rel="stylesheet" type="text/css" media="screen,projection" href={% static "pl-mapa-500px.css" %}/>
+</head>
+<body>
+<header>
+    <p id="loginPanel"></p>
+    <div class="tytul"><h1>Wyniki wyborów 2000</h1></div>
+    <section>
+        <h2 id="podtytulPolska">Polska</h2>
+        <h2 id="podtytulWojewodztwo"></h2>
+        <h2 id="podtytulOkreg"></h2>
+        <h2 id="podtytulGmina"></h2>
+        <p hidden id="idGminy"></p>
+    </section>
+</header>
+<main>
+    <section class="wyszukiwarkaGmin">
+        <form id="formularzDoGmin" method="post">
+            <label>Wyszukaj gminę: </label><input type="text" name="szukanaGmina">
+            <input type="submit" value="Szukaj">
+        </form>
+        <ul id="listaGmin"></ul>
+    </section>
+    <section class="wynikiWyborow">
+        <section class="mapa">
+            <div id="map-pl">
+                <ul id="polska">
+                    <li id="pl1"><a href="#wojewodztwo/2">Dolnośląskie</a></li>
+                    <li id="pl2"><a href="#wojewodztwo/4">Kujawsko-pomorskie</a></li>
+                    <li id="pl3"><a href="#wojewodztwo/6">Lubelskie</a></li>
+                    <li id="pl4"><a href="#wojewodztwo/8">Lubuskie</a></li>
+                    <li id="pl5"><a href="#wojewodztwo/10">Łódzkie</a></li>
+                    <li id="pl6"><a href="#wojewodztwo/12">Małopolskie</a></li>
+                    <li id="pl7"><a href="#wojewodztwo/14">Mazowieckie</a></li>
+                    <li id="pl8"><a href="#wojewodztwo/16">Opolskie</a></li>
+                    <li id="pl9"><a href="#wojewodztwo/18">Podkarpackie</a></li>
+                    <li id="pl10"><a href="#wojewodztwo/20">Podlaskie</a></li>
+                    <li id="pl11"><a href="#wojewodztwo/22">Pomorskie</a></li>
+                    <li id="pl12"><a href="#wojewodztwo/24">Śląskie</a></li>
+                    <li id="pl13"><a href="#wojewodztwo/26">Świętokrzyskie</a></li>
+                    <li id="pl14"><a href="#wojewodztwo/28">Warmińsko-mazurskie</a></li>
+                    <li id="pl15"><a href="#wojewodztwo/30">Wielkopolskie</a></li>
+                    <li id="pl16"><a href="#wojewodztwo/32">Zachodniopomorskie</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="tabelki">
+            <div class="wyniki">
+                <h2>Wyniki</h2>
+                <table class="tabela_wynikow"></table>
+            </div>
+            <div class="statystyki">
+                <h2>Statystyka</h2>
+                <table class="tabela_statystyk"></table>
+            </div>
+        </section>
+        <div class="linki"></div>
+        <div class="obwody">
+            <div>
+                <table class="wynikiObwody"></table>
+            </div>
+            <div>
+                <table class="statystykiObwody"></table>
+            </div>
+        </div>
+    </section>
+    <section class="edycja">
+        <form id="formularz" method="post">
+            <table class="wierszeFormularza"></table>
+        </form>
+    </section>
+</main>
+</body>
+</html>

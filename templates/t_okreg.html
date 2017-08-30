@@ -1,0 +1,14 @@
+{% extends "t_wojewodztwo.html" %}
+
+{% block tytul %} Okreg {{okr.numer}} {% endblock %}
+
+{% block links %}
+<div class="clear">
+    <h2>Odnośniki</h2>
+    <ul>
+    {% for i in odnosniki %}
+        <li><a href="../gmina/{{i.numer}}.html">Gmina {{i.nazwa}}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

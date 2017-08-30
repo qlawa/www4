@@ -1,0 +1,15 @@
+{% extends "Podstawa.html" %}
+
+{% block tytul %}Login{% endblock %}
+
+{% block content %}
+<form id="login_form" method="post">
+    {% csrf_token %}
+<table>
+    <tbody>
+    {{ form.as_table }}
+    </tbody>
+</table>
+<input type="submit" value="Login" />
+</form>
+{% endblock %}

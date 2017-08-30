@@ -1,0 +1,13 @@
+{% extends "Podstawa.html" %}
+
+{% block tytul %} {{woj.nazwa}} {% endblock %}
+{% block links %}
+<div class="clear">
+    <h2>Odnośniki</h2>
+    <ul>
+    {% for i in odnosniki %}
+        <li><a href="../okreg/{{i.numer}}.html">Okreg {{i.numer}}</a></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

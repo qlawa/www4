@@ -1,0 +1,54 @@
+{% extends "t_wojewodztwo.html" %}
+
+{% block tytul %} Gmina {{gmi.nazwa}} {% endblock %}
+
+{% block links %}
+{% endblock %}
+{% block footer %}
+<div class="clear">
+    <h2>W podziale na obwody</h2>
+    <h3>Wyniki</h3>
+    <table class="wysrodkowane">
+        <tbody>
+        <tr>
+            <th>Nr obw.</th>
+            {% for i in kandydaci %}
+            <th>{{ i }}</th>
+            {% endfor %}
+        </tr>
+        {% for i in wyniki_obw %}
+        <tr>
+            {% for j in i %}
+                {% if forloop.first %}
+                <td><a href="../edycja/{{ gmi.numer }}/{{ j.obwod.numer }}">{{ j.obwod.numer }}</a></td>
+                {% endif %}
+            <td>{{ j.liczba }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Statystyka</h3>
+    <table class="wysrodkowane">
+        <tbody>
+        <tr>
+            <th>Nr obw.</th>
+            {% for i in staty_info %}
+            <th>{{ i }}</th>
+            {% endfor %}
+        </tr>
+        {% for i in staty_obw %}
+        <tr>
+            {% for j in i %}
+                {% if forloop.first %}
+                <td>{{ j.obwod.numer }}</td>
+                {% endif %}
+            <td>{{ j.liczba }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
