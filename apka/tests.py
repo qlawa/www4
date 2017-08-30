@@ -400,7 +400,7 @@ def wpisz_dane(selenium, dane1=0, dane2=0, numer_selenuim=1):
     my_input_1 = selenium.find_element_by_xpath(
         "//table[@class='wierszeFormularza']/tbody[1]/tr[" + str(numer_selenuim) + "]/td[2]/input")
     my_input_2 = selenium.find_element_by_xpath(
-        "//table[@class='wierszeFormularza']/tbody[1]/tr[" + str(numer_selenuim) + "]/td[2]/input")
+        "//table[@class='wierszeFormularza']/tbody[1]/tr[" + str(numer_selenuim + 1) + "]/td[2]/input")
     my_input_1.clear()
     my_input_1.send_keys(dane1)
     my_input_2.clear()
